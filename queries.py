@@ -32,6 +32,9 @@ def run_query(name, collection, pipeline):
 # 1. Koje tipove proizvoda preferiraju različite starosne grupe kupaca?
 pipeline_q2 = [
     {
+        "$limit": 100
+    },
+    {
         "$lookup": {
             "from": "customers",
             "localField": "customer_id",
